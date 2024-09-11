@@ -207,7 +207,7 @@ export const EcomProvider = ({ children }) => {
     }
   })();
 
-  const url = "http://localhost:5000";
+  const url = "https://hotel-api-3o4k.onrender.com";
 
   const [searchCriteria, setSearchCriteria] = useState({
     location: '',
@@ -251,7 +251,7 @@ export const EcomProvider = ({ children }) => {
 
   const signup = async (username, email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/user/register', {
+      const response = await axios.post('https://hotel-api-3o4k.onrender.com/api/user/register', {
         UserName: username, email, password
       });
       const { user, token } = response.data;
@@ -274,7 +274,7 @@ export const EcomProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/user/login', {
+      const response = await axios.post('https://hotel-api-3o4k.onrender.com/api/user/login', {
         email, password
       });
       const { user, token } = response.data;

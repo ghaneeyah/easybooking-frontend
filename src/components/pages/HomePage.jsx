@@ -64,7 +64,7 @@ const HomePage = () => {
   
   const getRoomImages = (roomName) => {
     const room = roomImages.find((room) => room.name === roomName);
-    return room ? room.imageNames.map((image) => `http://localhost:5000/uploads/${image}.jpg`) : [];
+    return room ? room.imageNames.map((image) => `https://hotel-api-3o4k.onrender.com/uploads/${image}.jpg`) : [];
   };
 
   return (
@@ -118,7 +118,7 @@ const HomePage = () => {
                 onClick={() => handleHotelClick(hotel._id)}
               >
                 <img
-                  src={`http://localhost:5000/${Array.isArray(hotel.image) ? hotel.image[0] : hotel.image}`}
+                  src={`https://hotel-api-3o4k.onrender.com/${Array.isArray(hotel.image) ? hotel.image[0] : hotel.image}`}
                   alt={hotel.name}
                   className="w-full h-48 sm:h-64 object-cover"
                 />
@@ -162,7 +162,7 @@ const HomePage = () => {
                     )}
                   </div>
                   <div className="p-6">
-                   <img src={`http://localhost:5000/${room.image && room.image.length > 0 ? room.image[0] : 'default-room-image.jpg'}`} />
+                   <img src={`https://hotel-api-3o4k.onrender.com/${room.image && room.image.length > 0 ? room.image[0] : 'default-room-image.jpg'}`} />
                     <h3 className="text-xl font-bold mb-2">{room.name}</h3>
                     <p className="text-gray-700">{room.description}</p>
                   </div>

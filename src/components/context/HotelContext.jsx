@@ -18,7 +18,7 @@ export const HotelProvider = ({ children, currentUser }) => {
     const fetchHotels = async () => {
         setLoadingHotels(true);
         try {
-            const response = await axios.get('http://localhost:5000/api/hotel/list');
+            const response = await axios.get('https://hotel-api-3o4k.onrender.com/api/hotel/list');
             setHotels(response.data.data);
         } catch (error) {
             setError(error.response ? error.response.data.message : error.message);
@@ -32,7 +32,7 @@ export const HotelProvider = ({ children, currentUser }) => {
         setLoadingHotels(true);
         try {
             // console.log(`Fetching hotel by ID: ${id}`); 
-            const response = await axios.get(`http://localhost:5000/api/hotel/${id}`);
+            const response = await axios.get(`https://hotel-api-3o4k.onrender.com/api/hotel/${id}`);
             console.log('Hotel response:', response.data);
            
             if (response.data) {
@@ -54,7 +54,7 @@ export const HotelProvider = ({ children, currentUser }) => {
     const fetchHotelRooms = async () => {
         setLoadingRooms(true);
         try {
-            const response = await axios.get('http://localhost:5000/api/hotelrooms/get');
+            const response = await axios.get('https://hotel-api-3o4k.onrender.com/api/hotelrooms/get');
             setHotelRooms(response.data.data);
         } catch (error) {
             setError(error.response ? error.response.data.message : error.message);
@@ -67,7 +67,7 @@ export const HotelProvider = ({ children, currentUser }) => {
     const fetchHotelRoomById = async (id) => {
         setLoadingRooms(true);
         try {
-            const response = await axios.get(`http://localhost:5000/api/hotelrooms/${id}`);
+            const response = await axios.get(`https://hotel-api-3o4k.onrender.com/api/hotelrooms/${id}`);
             
             setHotelRoom(response.data.data);
         } catch (error) {
@@ -102,7 +102,7 @@ export const HotelProvider = ({ children, currentUser }) => {
             throw new Error('userId, hotelId, or totalPrice is missing in bookingData');
           }
       
-          const response = await axios.post("http://localhost:5000/api/bookings/create", bookingData, {
+          const response = await axios.post("https://hotel-api-3o4k.onrender.com/api/bookings/create", bookingData, {
             headers: {
               'Authorization': `Bearer ${token}`
             }
@@ -127,7 +127,7 @@ export const HotelProvider = ({ children, currentUser }) => {
                 throw new Error('No authentication token found');
             }
     
-            const response = await axios.get('http://localhost:5000/api/bookings/bookings', {
+            const response = await axios.get('https://hotel-api-3o4k.onrender.com/api/bookings/bookings', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

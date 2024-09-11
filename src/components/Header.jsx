@@ -8,7 +8,7 @@ const Header = () => {
   const { currentUser, userProfile, logout, getUserProfile, updateUserProfile } = useEcom();
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
-  const userImage = userProfile?.image ? `http://localhost:5000/uploads/${userProfile.image}` : avatar;
+  const userImage = userProfile?.image ? `https://hotel-api-3o4k.onrender.com/uploads/${userProfile.image}` : avatar;
 
   const handleLogout = () => {
     logout();
