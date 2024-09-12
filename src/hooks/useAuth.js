@@ -14,7 +14,7 @@ const useAuth = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/user/user", {
+      const res = await fetch("https://hotel-api-3o4k.onrender.com/api/user/user", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
