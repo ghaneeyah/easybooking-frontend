@@ -23,7 +23,7 @@ function UserBookings  ()  {
                     throw new Error('No authentication token found');
                 }
 
-                const response = await axios.get('https://hotel-api-3o4k.onrender.com/api/bookings/bookings', {
+                const response = await axios.get('https://hotel-api-1jnm.onrender.com/api/bookings/bookings', {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 console.log('User bookings:', response.data);
